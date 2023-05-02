@@ -7,6 +7,7 @@
 ละก็มาแก้ line นี้
 
 ```
+<<<<<<< HEAD
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math.dart' as vector;
 
@@ -65,6 +66,8 @@ class _SuccessAnimationState extends State<SuccessAnimation>
   }
 }
 
+=======
+>>>>>>> c07a125 (Update README.md)
 class _SuccessPainter extends CustomPainter {
   final double scale;
   final Color color;
@@ -81,6 +84,7 @@ class _SuccessPainter extends CustomPainter {
       ..style = PaintingStyle.fill;
     canvas.drawCircle(center, circleRadius * scale, circlePaint);
 
+<<<<<<< HEAD
     final tickPaint = Paint()
       ..color = Colors.white
       ..style = PaintingStyle.stroke
@@ -95,6 +99,22 @@ class _SuccessPainter extends CustomPainter {
     path.quadraticBezierTo(control1.dx, control1.dy, end.dx, end.dy);
 
     canvas.drawPath(path, tickPaint);
+=======
+    final iconSize = circleRadius * 0.8 * scale;
+    final icon = Icon(
+      Icons.check,
+      size: iconSize,
+      color: Colors.white,
+    );
+
+    final iconOffset = Offset(
+      size.width / 2 - iconSize / 2,
+      size.height / 2 - iconSize / 2,
+    );
+
+    canvas.drawCircle(center, circleRadius * scale, circlePaint);
+    canvas.drawIcon(icon.icon, iconOffset, icon.color, scale * iconSize);
+>>>>>>> c07a125 (Update README.md)
   }
 
   @override
@@ -102,5 +122,8 @@ class _SuccessPainter extends CustomPainter {
     return oldDelegate.scale != scale || oldDelegate.color != color;
   }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> c07a125 (Update README.md)
 ```
